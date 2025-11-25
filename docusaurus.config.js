@@ -95,6 +95,32 @@ const config = {
         },
         items: [
           {
+          label: 'Penggunaan',
+          position: 'left',
+          items: [              // Array nested untuk dropdown
+            {
+              label: 'Data Satelit untuk Pembangunan',
+              to: '/docs/data-satelit',
+            },
+            {
+              label: 'Kebencanaan',
+              to: '/docs/kebencanaan',
+            },
+            {
+              label: 'Penggunaan Lahan',
+              to: '/docs/penggunaan-lahan',
+            },
+            {
+              label: 'Pemantauan Lingkungan',
+              to: '/docs/pemantauan-lingkungan',
+            },
+            {
+              label: 'Pengelolaan Pesisir',
+              to: '/docs/pengelolaan-pesisir',
+            },
+          ],
+        },
+          {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
