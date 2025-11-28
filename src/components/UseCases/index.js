@@ -9,19 +9,19 @@ const USE_CASES = [
     id: "usecase1",
     image:
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    link: "/environment",
+    link: "/page/data-satelit",
   },
   {
     id: "usecase2",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/technology",
+    link: "/page/kebencanaan",
   },
   {
     id: "usecase3",
     image:
       "https://plus.unsplash.com/premium_photo-1666256629413-ea053d34ff36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/research",
+    link: "/page/penggunaan-lahan",
   },
 ];
 
@@ -32,13 +32,13 @@ function getUseCaseTranslations(useCaseId) {
       return {
         title: translate({
           id: "useCase.card.environment.title",
-          message: "Lingkungan",
+          message: "Data Satelit untuk Pembangunan",
           description: "Title for use case 1",
         }),
         description: translate({
           id: "useCase.card.environment.description",
           message:
-            "Kami menyediakan citra dan data terpercaya tentang lanskap Indonesia untuk peneliti dan pengelola lahan, membantu mereka menavigasi kompleksitas lingkungan",
+            "Menyediakan citra dan data terpercaya wilayah Indonesia yang dapat digunakan untuk pembangunan berkelanjutan.",
           description: "Description for use case 1",
         }),
       };
@@ -46,13 +46,13 @@ function getUseCaseTranslations(useCaseId) {
       return {
         title: translate({
           id: "useCase.card.technology.title",
-          message: "Teknologi",
+          message: "Kebencanaan",
           description: "Title for use case 2",
         }),
         description: translate({
           id: "useCase.card.technology.description",
           message:
-            "Solusi terkini untuk tantangan modern dalam manajemen dan analisis data, didukung oleh riset dan pengembangan yang inovatif.",
+            "Informasi cepat dan akurat untuk mendeteksi potensi banjir, longsor, kebakaran hutan, dan aktivitas gunung api.",
           description: "Description for case 2",
         }),
       };
@@ -60,13 +60,13 @@ function getUseCaseTranslations(useCaseId) {
       return {
         title: translate({
           id: "useCase.card.research.title",
-          message: "Riset",
+          message: "Penggunaan Lahan",
           description: "Title for use case 3",
         }),
         description: translate({
           id: "useCase.card.research.description",
           message:
-            "Mendukung riset ilmiah dengan data yang andal dan tools inovatif yang memungkinkan penemuan dan wawasan terobosan.",
+            "Pemantauan perubahan tutupan lahan secara konsisten, sehingga berbagai dinamika yang terjadi dapat terdeteksi dengan jelas.",
           description: "Description for use case 3",
         }),
       };
@@ -84,7 +84,7 @@ export default function UseCase() {
             <h2 className="section__title section__title--primary-darkest">
               {translate({
                 id: "useCase.title",
-                message: "Contoh Pemanfaatan",
+                message: "Contoh Penggunaan",
                 description: "The title of the use cases section",
               })}
             </h2>
@@ -92,7 +92,7 @@ export default function UseCase() {
               {translate({
                 id: "useCase.subtitle",
                 message:
-                  "Temukan bagaimana solusi kami memberikan dampak di berbagai domain",
+                  "Temukan bagaimana solusi kami memberikan dampak di berbagai permasalahan",
                 description: "The subtitle of the use cases section",
               })}
             </p>
@@ -117,12 +117,12 @@ export default function UseCase() {
         </div>
         <div className="text--center margin-top--lg">
           <a
-            href="/use-cases"
+            href="/page/ketahanan-pangan"
             className="button button--outline button--lg button--primary"
           >
             {translate({
               id: "useCase.readMore.button",
-              message: "Lihat Contoh Pemanfaatan Lainnya",
+              message: "Lihat Contoh Penggunaan Lainnya",
               description: "Button text to view more use cases",
             })}
           </a>
