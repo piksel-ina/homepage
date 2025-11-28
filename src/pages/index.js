@@ -19,7 +19,7 @@ function HomepageHeader() {
           <Heading as="h1" className="hero__title text--uppercase">
             {translate({
               id: "homepage.hero.title",
-              message: "Bumi Digital Indonesia",
+              message: "MEMAHAMI BUMI INDONESIA MELALUI PIKSEL",
               description: "The main title on the homepage hero section",
             })}
           </Heading>

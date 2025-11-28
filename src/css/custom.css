@@ -34,17 +34,24 @@
     in srgb,
     var(--ifm-color-white) 99%,
     var(--ifm-color-black) 1%
-  )
+  );
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   --ifm-font-family-base: "Open Sans", -apple-system, "Roboto", sans-serif;
-  /* Font weights available in Open Sans */
   --ifm-font-weight-light: 300;
   --ifm-font-weight-normal: 400;
   --ifm-font-weight-semibold: 500;
   --ifm-font-weight-bold: 600;
+
+  /* ===== CUSTOM VARIABLES UNTUK SECTION CARDS ===== */
+  --card-bg-primary: #1e5863;
+  --card-bg-secondary: #2d6874;
+  --card-text-primary: #ffffff;
+  --card-text-secondary: #e6f3f7;
+  --card-link-color: #ffffff;
+  --card-link-hover: #74c0fc;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -61,7 +68,15 @@
     in srgb,
     var(--ifm-color-black) 95%,
     var(--ifm-color-white) 5%
-  )
+  );
+
+  /* ===== CUSTOM VARIABLES UNTUK DARK MODE SECTION CARDS ===== */
+  --card-bg-primary: #0d2b36;
+  --card-bg-secondary: #124552;
+  --card-text-primary: #e6f3f7;
+  --card-text-secondary: #b8d4dc;
+  --card-link-color: #74c0fc;
+  --card-link-hover: #bfe0fa;
 }
 
 /* Apply Oswald to all headings */
@@ -159,6 +174,37 @@ h3,
   padding-left: 2.5rem;
 }
 
+/**
+ * ===== FIX NAVBAR SPACING BETWEEN ITEMS =====
+ */
+.navbar__items--right .navbar__item,
+.navbar__items--left .navbar__item {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.navbar__link {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.navbar__item.dropdown .navbar__link {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.navbar__item.navbar__item--doc {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.navbar__items {
+  gap: 0 !important;
+}
+
+.navbar__item + .navbar__item {
+  margin-left: 0 !important;
+}
 
 /* Responsiveness */
 @media (min-width: 576px) and (max-width: 997px) {
@@ -180,3 +226,431 @@ h3,
     max-width: 100% !important;
   }
 }
+
+/**
+ * ============================================
+ * SECTIONS CONTAINER STYLES (UPDATED)
+ * ============================================
+ */
+
+.sections-container {
+  background-color: var(--ifm-background-color);
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  transition: background-color var(--ifm-transition-fast);
+}
+
+/* Dark mode adjustment */
+html[data-theme='dark'] .sections-container {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/**
+ * ============================================
+ * SECTION CARD STYLES (UPDATED)
+ * ============================================
+ */
+
+.section-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: box-shadow var(--ifm-transition-fast);
+}
+
+.section-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode shadow */
+html[data-theme='dark'] .section-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .section-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * ============================================
+ * IMAGE FALLBACK STYLES (UPDATED)
+ * ============================================
+ */
+
+.image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  padding: 1rem;
+  text-align: center;
+  transition: background-color var(--ifm-transition-fast);
+}
+
+html[data-theme='dark'] .image-fallback {
+  background-color: var(--ifm-color-emphasis-700);
+}
+
+/**
+ * ============================================
+ * SECTION LINK HOVER EFFECT (NEW)
+ * ============================================
+ */
+
+.section-link {
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.section-link:hover {
+  opacity: 0.8 !important;
+  text-decoration: underline !important;
+}
+
+.section-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.section-link:hover::after {
+  width: 100%;
+}
+
+/**
+ * ============================================
+ * CUSTOM SECTION CARDS (ALTERNATIVE STYLE)
+ * ============================================
+ */
+
+/* Container untuk card dengan gambar */
+.custom-section-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--card-bg-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--ifm-transition-fast),
+              box-shadow var(--ifm-transition-fast);
+}
+
+html[data-theme='dark'] .custom-section-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Content section dari card */
+.custom-section-content {
+  padding: 3rem;
+  color: var(--card-text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-section-content h2 {
+  color: var(--card-text-primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.custom-section-content p {
+  color: var(--card-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.custom-section-content a {
+  color: var(--card-link-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--ifm-transition-fast);
+}
+
+.custom-section-content a:hover {
+  color: var(--card-link-hover);
+}
+
+/* Image section dari card */
+.custom-section-image {
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+}
+
+
+/**
+ * ============================================
+ * SECTION BUTTON STYLES (UPDATED)
+ * ============================================
+ */
+
+.section-button {
+  display: inline-block;
+  background-color: #4a7c9e;
+  color: white !important;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: fit-content; /* ← TAMBAHKAN INI */
+}
+
+.section-button:hover {
+  background-color: #5a8cae !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: white !important;
+}
+
+.section-button:active {
+  transform: translateY(0);
+}
+
+html[data-theme='dark'] .section-button {
+  background-color: #3d6b8c;
+}
+
+html[data-theme='dark'] .section-button:hover {
+  background-color: #4d7b9c !important;
+}
+
+/**
+ * ============================================
+ * RESPONSIVE STYLES
+ * ============================================
+ */
+
+@media (max-width: 996px) {
+  .sections-container {
+    padding: 2rem 1rem;
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-section-card {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-section-content {
+    padding: 2rem;
+  }
+
+  .custom-section-image {
+    min-height: 250px;
+    order: -1; /* Gambar di atas pada mobile */
+  }
+}
+
+/**
+ * ============================================
+ * SCROLL TO TOP BUTTON (NEW)
+ * ============================================
+ */
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 5rem;
+  background-color: #4a7c9e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeInUp 0.3s ease;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #5a8cae;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top-button:active {
+  transform: translateY(-1px);
+}
+
+.scroll-to-top-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode */
+html[data-theme='dark'] .scroll-to-top-button {
+  background-color: #3d6b8c;
+}
+
+html[data-theme='dark'] .scroll-to-top-button:hover {
+  background-color: #4d7b9c;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .scroll-to-top-button {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .scroll-to-top-button span {
+    display: none; /* Sembunyikan text di mobile */
+  }
+
+  .scroll-to-top-button svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/**
+ * ============================================
+ * IMAGE FALLBACK - DARK MODE FIX
+ * ============================================
+ */
+
+.image-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-content); /* Otomatis menyesuaikan light/dark mode */
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Dark mode - pastikan teks dan icon terlihat */
+html[data-theme='dark'] .image-fallback {
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Icon SVG di fallback */
+.image-fallback svg {
+  color: var(--ifm-color-emphasis-600);
+}
+
+html[data-theme='dark'] .image-fallback svg {
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Teks di fallback */
+.image-fallback span {
+  color: var(--ifm-color-content);
+}
+
+html[data-theme='dark'] .image-fallback span {
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Existing styles... */
+
+/* Hide navbar and footer on landing pages */
+.hide-nav-footer .navbar,
+.hide-nav-footer footer {
+  display: none !important;
+}
+
+.hide-nav-footer main {
+  padding: 0 !important;
+}
+
+.hide-nav-footer .main-wrapper {
+  padding-top: 0 !important;
+}
+
+
+/* Variant - Image di kiri */
+.custom-section-card.image-left .custom-section-image {
+  order: -1;
+}
+
+/* Variant - Image di kanan (default) */
+.custom-section-card.image-right .custom-section-image {
+  order: 1;
+}
+
+/* ========================================
+   HIDE SIDEBAR ITEM
+   ======================================== */
+
+/* Method 1: Hide by class name */
+.hidden-sidebar-item {
+  display: none !important;
+}
+
+/* Method 2: Hide by specific selector */
+.theme-doc-sidebar-item-link.hidden-sidebar-item {
+  display: none !important;
+}
+
+/* Method 3: Hide parent li element */
+li:has(.hidden-sidebar-item) {
+  display: none !important;
+}
+
+/* Method 4: Fallback for older browsers (without :has support) */
+.menu__list-item:has(.hidden-sidebar-item) {
+  display: none !important;
+}
+
+/* Method 5: Hide by aria-label or title */
+.menu__link[aria-label="Penggunaan"] {
+  display: none !important;
+}
+
+/* Method 6: Hide first item if it's the index (optional) */
+/* Uncomment jika method lain tidak work */
+/*
+.theme-doc-sidebar-container nav > ul > li:first-child:has([href="/penggunaan"]) {
+  display: none !important;
+}
+*/

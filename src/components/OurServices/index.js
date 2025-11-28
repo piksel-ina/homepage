@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, FileCode2, Unplug, GitBranch } from "lucide-react";
+import { Map, FileCode2, Unplug, GitBranch, BookOpenText  } from "lucide-react";
 import Translate from "@docusaurus/Translate";
 import { translate } from "@docusaurus/Translate";
 import GlassCard from "../GlassCard";
@@ -12,7 +12,7 @@ const OurServices = () => {
       icon: Map,
       title: translate({
         id: "ourServices.service1.title",
-        message: "Piksel Map",
+        message: "Peta",
         description: "Title for service 1",
       }),
       description: translate({
@@ -32,18 +32,18 @@ const OurServices = () => {
       icon: FileCode2,
       title: translate({
         id: "ourServices.service2.title",
-        message: "Piksel Sandbox",
+        message: "Analisis Spasial",
         description: "Title for service 2",
       }),
       description: translate({
         id: "ourServices.service2.description",
         message:
-          "Eksperimen, belajar, dan buat prototype di environment Jupyter berbasis cloud kami.",
+          "Analisis spasial data citra satelit melalui jupyter notebook.",
         description: "Service 2 Description",
       }),
       buttonText: translate({
         id: "ourServices.service2.button",
-        message: "Lihat Analytics",
+        message: "Lihat Analisis",
         description: "Button text for service 2",
       }),
     },
@@ -58,7 +58,7 @@ const OurServices = () => {
       description: translate({
         id: "ourServices.service3.description",
         message:
-          "Akses dataset geospasial yang komprehensif melalui infrastruktur API kami.",
+          "Akses data Piksel melalui API [Application Programming Interface].",
         description: "Service 3 Description",
       }),
       buttonText: translate({
@@ -69,21 +69,21 @@ const OurServices = () => {
     },
     {
       id: 4,
-      icon: GitBranch,
+      icon: BookOpenText,
       title: translate({
         id: "ourServices.service4.title",
-        message: "Piksel Workflows",
+        message: "Katalog Produk",
         description: "Title for service 4",
       }),
       description: translate({
         id: "ourServices.service4.description",
         message:
-          "Otomasi pemrosesan data geospasial skala besar dengan Argo Workflows.",
+          "Daftar kumpulan data citra satelit dan data turunannya.",
         description: "Service 4 Description",
       }),
       buttonText: translate({
         id: "ourServices.service4.button",
-        message: "Jelajahi Workflows",
+        message: "Jelajahi Katalog",
         description: "Button text for service 4",
       }),
     },
@@ -107,7 +107,7 @@ const OurServices = () => {
               {translate({
                 id: "ourServices.subtitle",
                 message:
-                  "Membuat data geospasial dapat diakses oleh semua orang",
+                  "Menyediakan data geospasial yang dapat diakses oleh semua orang",
                 description: "The subtitle of the our services section",
               })}
             </p>

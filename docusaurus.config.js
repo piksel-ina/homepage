@@ -58,6 +58,20 @@ const config = {
     ],
   ],
 
+plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'penggunaan',                    // ← ID plugin
+        path: 'penggunaan',                  // ← Path ke folder penggunaan/
+        routeBasePath: 'penggunaan',         // ← URL base path
+        sidebarPath: require.resolve('./sidebars.js'),
+        // Optional: editUrl
+        // editUrl: 'https://github.com/your-org/piksel/tree/main/',
+      },
+    ],
+  ],
+
   stylesheets: [
     {
       href: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap",
@@ -87,6 +101,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "img/piksel-logo.svg",
+
+    // TAMBAHKAN KONFIGURASI COLOR MODE DI SINI
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+
       navbar: {
         title: "PIKSEL",
         logo: {
@@ -94,13 +116,99 @@ const config = {
           src: "img/piksel-logo.svg",
         },
         items: [
+           {
+          label: 'Penggunaan',
+          position: 'left',
+          items: [              // Array nested untuk dropdown
+            {
+              label: 'Ketahanan Pangan',
+              to: '/page/ketahanan-pangan',
+            },
+            {
+              label: 'Data Satelit untuk Pembangunan',
+              to: '/page/data-satelit',
+            },
+            
+            {
+              label: 'Kebencanaan',
+              to: '/page/kebencanaan',
+            },
+            {
+              label: 'Penggunaan Lahan',
+              to: '/page/penggunaan-lahan',
+            },
+            {
+              label: 'Pemantauan Lingkungan',
+              to: '/page/pemantauan-lingkungan',
+            },
+            {
+              label: 'Pengelolaan Pesisir',
+              to: '/page/pengelolaan-pesisir',
+            },
+          ],
+        },
+            // Menu PENGGUNAAN - BARU
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Dokumentasi",
+            type: 'docSidebar',
+            sidebarId: 'penggunaanSidebar',
+            docsPluginId: 'penggunaan',  // ← Link ke plugin penggunaan
+            position: 'left',
+            label: 'Penggunaan',
           },
-          { to: "/blog", label: "Artikel", position: "left" },
+         {
+          label: 'Layanan',
+          position: 'left',
+          items: [              // Array nested untuk dropdown
+              {
+              label: 'Peta',
+              to: '/layanan/peta',
+            },
+            {
+              label: 'Analisis Spasial',
+              to: '/layanan/analisis-spasial',
+            },
+          
+            {
+              label: 'Piksel Data API',
+              to: '/layanan/api',
+            },
+            {
+              label: 'Katalog Produk',
+              to: '/layanan/katalog-produk',
+            },
+          ],
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Dokumentasi",
+        },
+        {
+          
+          label: 'Tentang',
+          position: 'left',
+          items: [              // Array nested untuk dropdown
+            {
+              label: 'Tujuan',
+              to: '/docs/katalog-produk',
+            },
+            {
+              label: 'Blog',
+              to: '/docs/analisis-spasial',
+            },
+            {
+              label: 'Koalaborasi',
+              to: '/docs/peta',
+            },
+            {
+              label: 'Kontak',
+              to: '/docs/api',
+            },
+
+          ],
+        },
+  
           {
             type: "localeDropdown",
             position: "right",
@@ -111,42 +219,54 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Layanan",
+            title: "Penggunaan",
             items: [
               {
-                label: "Piksel Map",
-                to: "/map",
+              label: 'Ketahanan Pangan',
+              to: '/page/ketahanan-pangan',
+            },
+              {
+                label: "Data Satelit untuk Pembangunan",
+                to: "/page/data-satelit",
               },
               {
-                label: "Piksel Sandbox",
-                to: "/sandbox",
+                label: "Kebencanaan",
+                to: "/page/kebencanaan",
               },
               {
-                label: "Piksel Data API",
-                to: "/api",
+                label: "Penggunaan Lahan",
+                to: "/page/penggunaan-lahan",
               },
               {
-                label: "Piksel Workflows",
-                to: "/workflows",
+                label: "Pemantauan Lingkungan",
+                to: "/page/pemantauan-lingkungan",
+              },
+              {
+                label: "Pengelolaan Pesisir",
+                to: "/page/pengelolaan-pesisir",
               },
             ],
           },
           {
-            title: "Contoh Pemanfaatan",
-            items: [
-              {
-                label: "Environment",
-                to: "/environment",
-              },
-              {
-                label: "Technology",
-                to: "/technology",
-              },
-              {
-                label: "Research",
-                to: "/research",
-              },
-            ],
+            title: "Layanan",
+            items: [              // Array nested untuk dropdown
+            {
+              label: 'Katalog Produk',
+              to: '/docs/katalog-produk',
+            },
+            {
+              label: 'Analisis Spasial',
+              to: '/docs/analisis-spasial',
+            },
+            {
+              label: 'Peta',
+              to: '/docs/peta',
+            },
+            {
+              label: 'API',
+              to: '/docs/api',
+            },
+          ],
           },
           {
             title: "Referensi Lainnya",
