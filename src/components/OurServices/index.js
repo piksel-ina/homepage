@@ -18,7 +18,7 @@ const OurServices = () => {
       description: translate({
         id: "ourServices.service1.description",
         message:
-          "Eksplorasi dan visualisasi dataset geospasial melalui platform web interaktif kami.",
+          "Eksplorasi dan visualisasi dataset geospasial.",
         description: "Service 1 Description",
       }),
       buttonText: translate({
@@ -26,6 +26,8 @@ const OurServices = () => {
         message: "Mulai Eksplorasi",
         description: "Button text for service 1",
       }),
+      link: "/layanan/peta", // ← Tambahkan link
+      linkSecondary: "/layanan/peta", // ← Tambahkan link
     },
     {
       id: 2,
@@ -43,9 +45,10 @@ const OurServices = () => {
       }),
       buttonText: translate({
         id: "ourServices.service2.button",
-        message: "Lihat Analisis",
+        message: "Lakukan Analisis",
         description: "Button text for service 2",
       }),
+      link: "https://sandbox.staging.pik-sel.id", // ← Tambahkan link
     },
     {
       id: 3,
@@ -58,14 +61,15 @@ const OurServices = () => {
       description: translate({
         id: "ourServices.service3.description",
         message:
-          "Akses data Piksel melalui API [Application Programming Interface].",
+          "Akses data Piksel yang komprehensif melalui API [Application Programming Interface].",
         description: "Service 3 Description",
       }),
       buttonText: translate({
         id: "ourServices.service3.button",
-        message: "Jelajah API",
+        message: "Jelajahi API",
         description: "Button text for service 3",
       }),
+      link: "https://github.com/piksel-ina/homepage", // ← Tambahkan link
     },
     {
       id: 4,
@@ -83,9 +87,10 @@ const OurServices = () => {
       }),
       buttonText: translate({
         id: "ourServices.service4.button",
-        message: "Jelajahi Katalog",
+        message: "Lihat Katalog",
         description: "Button text for service 4",
       }),
+      link: "https://explorer.staging.pik-sel.id/products", // ← Link external
     },
   ];
 
@@ -125,6 +130,8 @@ const OurServices = () => {
                   title={service.title}
                   description={service.description}
                   buttonText={service.buttonText}
+                  link={service.link} // ← Pass link ke GlassCard
+                  //linkSecondary={service.linkSecondary} // ← Pass linkSecondary ke GlassCard
                 />
               </div>
             </div>

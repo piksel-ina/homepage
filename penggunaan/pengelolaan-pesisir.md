@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Pengelolaan Pesisir
 ---
 
-# Pengelolaan Pesisir
+import DetailSection from '@site/src/components/DetailSection';
 
-Pemantauan perubahan garis pantai...
+<DetailSection sectionId="pengelolaan-pesisir" />

@@ -36,8 +36,8 @@ function ModernCard({ image, title, description, link }) {
             onClick={handleLearnMore}
             className={`button button--link ${styles.modernCardButton}`}
           >
-            Learn more
-            <span className={styles.modernCardArrow}>→</span>
+            <p></p><p></p><p>Pelajari Selengkapnya
+            <span className={styles.modernCardArrow}>→</span></p>
           </button>
         </div>
       </div>

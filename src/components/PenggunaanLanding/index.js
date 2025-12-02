@@ -36,16 +36,16 @@ export default function PenggunaanLanding() {
       bgGradient: "linear-gradient(135deg, #654321 0%, #7c5c3d 50%, #8b6f47 100%)",
       imagePosition: "left"
     },
-    {
-      id: "data-satelit",
-      title: "Data Satelit untuk Pembangunan",
-      description: "Data satelit menjadi elemen penting pembangunan nasional karena menyediakan informasi spasial cepat dan akurat untuk kebutuhan strategis seperti penanggulangan bencana, penggunaan lahan, lingkungan, pesisir, dan ketahanan pangan. Satelit juga mendukung pemantauan infrastruktur, kualitas udara, pola penyakit, serta perkembangan wilayah dan aktivitas ekonomi, sehingga meningkatkan efektivitas perencanaan dan pengambilan keputusan.",
-      link: "Kunjungi Data Satelit",
-      href: "/penggunaan/data-satelit",
-      image: "/img/penggunaan/sat.jpg",
-      bgGradient: "linear-gradient(135deg, #1e5f74 0%, #0d3f52 50%, #0a2f3d 100%)",
-      imagePosition: "right"
-    },
+      {
+    id: "data-satelit",
+    title: "Data Satelit untuk Pembangunan",
+    description: "Data satelit menjadi elemen penting pembangunan nasional karena menyediakan informasi spasial cepat dan akurat untuk kebutuhan strategis seperti penanggulangan bencana, penggunaan lahan, lingkungan, pesisir, dan ketahanan pangan. Satelit juga mendukung pemantauan infrastruktur, kualitas udara, pola penyakit, serta perkembangan wilayah dan aktivitas ekonomi, sehingga meningkatkan efektivitas perencanaan dan pengambilan keputusan.",
+    link: "Kunjungi Data Satelit",
+    href: "/penggunaan/data-satelit",  // ← Link ke halaman detail
+    image: "/img/penggunaan/sat.jpg",
+    bgGradient: "linear-gradient(135deg, #1e5f74 0%, #0d3f52 50%, #0a2f3d 100%)",
+    imagePosition: "right"
+  },
     {
       id: "kebencanaan",
       title: "Kebencanaan",

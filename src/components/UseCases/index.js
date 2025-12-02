@@ -9,19 +9,19 @@ const USE_CASES = [
     id: "usecase1",
     image:
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    link: "/page/data-satelit",
+    link: "/penggunaan/data-satelit",
   },
   {
     id: "usecase2",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/page/kebencanaan",
+    link: "/penggunaan/kebencanaan",
   },
   {
     id: "usecase3",
     image:
       "https://plus.unsplash.com/premium_photo-1666256629413-ea053d34ff36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/page/penggunaan-lahan",
+    link: "/penggunaan/penggunaan-lahan",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function UseCase() {
               {translate({
                 id: "useCase.subtitle",
                 message:
-                  "Temukan bagaimana solusi kami memberikan dampak di berbagai permasalahan",
+                  "Temukan bagaimana Piksel memberikan solusi di berbagai permasalahan",
                 description: "The subtitle of the use cases section",
               })}
             </p>
@@ -117,7 +117,7 @@ export default function UseCase() {
         </div>
         <div className="text--center margin-top--lg">
           <a
-            href="/page/ketahanan-pangan"
+            href="/penggunaan/"
             className="button button--outline button--lg button--primary"
           >
             {translate({

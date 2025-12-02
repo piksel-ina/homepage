@@ -58,7 +58,7 @@ const config = {
     ],
   ],
 
-plugins: [
+/* plugins: [
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -70,7 +70,7 @@ plugins: [
         // editUrl: 'https://github.com/your-org/piksel/tree/main/',
       },
     ],
-  ],
+  ], */
 
   stylesheets: [
     {
@@ -119,45 +119,47 @@ plugins: [
            {
           label: 'Penggunaan',
           position: 'left',
+          to: '/penggunaan',  // ← Tambahkan ini!
           items: [              // Array nested untuk dropdown
             {
               label: 'Ketahanan Pangan',
-              to: '/page/ketahanan-pangan',
+              to: '/penggunaan/ketahanan-pangan',
             },
             {
               label: 'Data Satelit untuk Pembangunan',
-              to: '/page/data-satelit',
+              to: '/penggunaan/data-satelit',
             },
             
             {
               label: 'Kebencanaan',
-              to: '/page/kebencanaan',
+              to: '/penggunaan/kebencanaan',
             },
             {
               label: 'Penggunaan Lahan',
-              to: '/page/penggunaan-lahan',
+              to: '/penggunaan/penggunaan-lahan',
             },
             {
               label: 'Pemantauan Lingkungan',
-              to: '/page/pemantauan-lingkungan',
+              to: '/penggunaan/pemantauan-lingkungan',
             },
             {
               label: 'Pengelolaan Pesisir',
-              to: '/page/pengelolaan-pesisir',
+              to: '/penggunaan/pengelolaan-pesisir',
             },
           ],
         },
-            // Menu PENGGUNAAN - BARU
+            /* // Menu PENGGUNAAN - BARU
           {
             type: 'docSidebar',
             sidebarId: 'penggunaanSidebar',
             docsPluginId: 'penggunaan',  // ← Link ke plugin penggunaan
             position: 'left',
             label: 'Penggunaan',
-          },
+          }, */
          {
           label: 'Layanan',
           position: 'left',
+          to: '/layanan',  // ← Tambahkan ini!
           items: [              // Array nested untuk dropdown
               {
               label: 'Peta',
@@ -165,16 +167,16 @@ plugins: [
             },
             {
               label: 'Analisis Spasial',
-              to: '/layanan/analisis-spasial',
+              href: 'https://sandbox.staging.pik-sel.id/',
             },
           
             {
               label: 'Piksel Data API',
-              to: '/layanan/api',
+              href: 'https://github.com/piksel-ina/homepage',
             },
             {
               label: 'Katalog Produk',
-              to: '/layanan/katalog-produk',
+              href: 'https://explorer.staging.pik-sel.id/products',
             },
           ],
         },
@@ -190,20 +192,28 @@ plugins: [
           position: 'left',
           items: [              // Array nested untuk dropdown
             {
+              label: 'Latar Belakang',
+              to: '/tentang/latar-belakang',
+            },
+            {
               label: 'Tujuan',
-              to: '/docs/katalog-produk',
+              to: '/tentang/tujuan',
             },
             {
-              label: 'Blog',
-              to: '/docs/analisis-spasial',
+              label: 'Artikel',
+              to: '/tentang/artikel',
             },
             {
-              label: 'Koalaborasi',
-              to: '/docs/peta',
+              label: 'Kolaborasi',
+              to: '/tentang/kolaborasi',
+            },
+             {
+              label: 'Kontributor',
+              to: '/tentang/kontributor',
             },
             {
-              label: 'Kontak',
-              to: '/docs/api',
+              label: 'Kontak Kami',
+              to: '/tentang/kontak',
             },
 
           ],
@@ -223,48 +233,49 @@ plugins: [
             items: [
               {
               label: 'Ketahanan Pangan',
-              to: '/page/ketahanan-pangan',
+              to: '/penggunaan/ketahanan-pangan',
             },
               {
                 label: "Data Satelit untuk Pembangunan",
-                to: "/page/data-satelit",
+                to: "/penggunaan/data-satelit",
               },
               {
                 label: "Kebencanaan",
-                to: "/page/kebencanaan",
+                to: "/penggunaan/kebencanaan",
               },
               {
                 label: "Penggunaan Lahan",
-                to: "/page/penggunaan-lahan",
+                to: "/penggunaan/penggunaan-lahan",
               },
               {
                 label: "Pemantauan Lingkungan",
-                to: "/page/pemantauan-lingkungan",
+                to: "/penggunaan/pemantauan-lingkungan",
               },
               {
                 label: "Pengelolaan Pesisir",
-                to: "/page/pengelolaan-pesisir",
+                to: "/penggunaan/pengelolaan-pesisir",
               },
             ],
           },
           {
             title: "Layanan",
             items: [              // Array nested untuk dropdown
-            {
-              label: 'Katalog Produk',
-              to: '/docs/katalog-produk',
+              {
+              label: 'Peta',
+              to: '/layanan/peta',
             },
             {
               label: 'Analisis Spasial',
-              to: '/docs/analisis-spasial',
+              href: 'https://sandbox.staging.pik-sel.id/',
+            },
+          
+            {
+              label: 'Piksel Data API',
+              href: 'https://github.com/piksel-ina/homepage',
             },
             {
-              label: 'Peta',
-              to: '/docs/peta',
-            },
-            {
-              label: 'API',
-              to: '/docs/api',
+              label: 'Katalog Produk',
+              href: 'https://explorer.staging.pik-sel.id/products',
             },
           ],
           },
@@ -295,19 +306,21 @@ plugins: [
           },
           {
             title: "Kontak Kami",
-            items: [
-              {
-                label: "Email: piksel@big.go.id",
-                href: "mailto:piksel@big.go.id",
-              },
-              {
-                label: "Phone: 021-8752062",
-                href: "tel:+62218752062",
-              },
-              {
-                label: "BIG Indonesia",
-                href: "https://www.big.go.id",
-              },
+            items: [{
+      label: "piksel@big.go.id",
+      href: "mailto:piksel@big.go.id",
+      className: "footer-email", // Tambahkan class
+    },
+    {
+      label: "021-8752062",
+      href: "tel:+62218752062",
+      className: "footer-phone", // Tambahkan class
+    },
+    {
+      label: "Badan Informasi Geospasial (BIG)",
+      href: "https://www.big.go.id",
+      className: "footer-website", // Tambahkan class
+    },
             ],
           },
         ],

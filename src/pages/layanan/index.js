@@ -43,7 +43,7 @@ const isExternalLink = (href) => {
       title: "Peta",
       description: "Layanan Peta PIKSEL menggunakan Terria.IO, platform pemetaan yang bisa dibuka langsung di browser. Dengan ini, pengguna dapat melihat dan menjelajahi berbagai data geospasial tanpa perlu menginstal aplikasi apa pun. Terria.IO memungkinkan peta ditampilkan dengan cepat, interaktif, dan mudah dipahami, sehingga siapa pun bisa melihat informasi spasial dalam bentuk visual yang jelas dan nyaman digunakan.",
       link: "Kunjungi Peta",
-      href: "#",
+      href: "layanan/peta",
       icon: Map,
       iconColor: "#8b6f47",
       imagePosition: "left"

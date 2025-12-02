@@ -591,7 +591,6 @@ html[data-theme='dark'] .image-fallback span {
   color: var(--ifm-color-content-secondary);
 }
 
-/* Existing styles... */
 
 /* Hide navbar and footer on landing pages */
 .hide-nav-footer .navbar,
@@ -654,3 +653,123 @@ li:has(.hidden-sidebar-item) {
   display: none !important;
 }
 */
+
+/* 
+   ===== NAVBAR DROPDOWN HOVER EFFECTS =====
+
+   //Dropdown menu container
+   .navbar__item.dropdown .dropdown__menu {
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+     padding: 8px 0;
+   }
+
+   //Dropdown link default state
+   .navbar__item.dropdown .dropdown__menu .dropdown__link {
+     padding: 8px 16px;
+     transition: all 0.2s ease-in-out;
+     border-radius: 4px;
+     margin: 2px 8px;
+   }
+
+   //Dropdown link hover state
+   .navbar__item.dropdown .dropdown__menu .dropdown__link:hover {
+     background-color: var(--ifm-color-primary);
+     color: #ffffff !important;
+     transform: translateX(4px);
+   }
+
+   //Dropdown link active state
+   .navbar__item.dropdown .dropdown__menu .dropdown__link--active {
+     background-color: var(--ifm-color-primary-light);
+     color: #ffffff;
+     font-weight: 600;
+   }
+
+   //Parent menu item hover
+   .navbar__item.dropdown:hover > .navbar__link {
+     color: var(--ifm-color-primary);
+   }
+
+ */
+
+/* ===== MATCH NAVBAR WITH SECTION BUTTONS ===== */
+
+/* Parent navbar items (Penggunaan, Layanan, dll) */
+.navbar__item > .navbar__link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar__item:hover > .navbar__link,
+.navbar__link:hover {
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(48, 151, 94, 0.1) !important; /* Light background */
+}
+
+/* Dropdown items */
+.dropdown__link {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dropdown__link:hover {
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(48, 151, 94, 0.1) !important; /* Light background */
+}
+
+/* Active states */
+.navbar__link--active,
+.dropdown__link--active {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
+}
+
+/* Smooth transition */
+.navbar__link,
+.dropdown__link {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Dropdown - Tambahkan underline saat hover */
+.navbar__item.dropdown .dropdown__menu .dropdown__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Text justify untuk paragraf */
+.text-justify {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.text-justify:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ===== FOOTER ICONS DENGAN CUSTOM CLASS ===== */
+
+/* Email icon */
+.footer-email::before {
+  content: "✉️ ";
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Phone icon */
+.footer-phone::before {
+  content: "📞 ";
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Website icon */
+.footer-website::before {
+  content: "🌐 ";
+  margin-right: 8px;
+  display: inline-block;
+}
+
+
+

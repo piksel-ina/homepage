@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 title: Ketahanan Pangan
 ---
 
-# Ketahanan Pangan
+import DetailSection from '@site/src/components/DetailSection';
 
-Data satelit mendukung pertanian presisi...
+<DetailSection sectionId="ketahanan-pangan" />

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-title: Data Satelit
+title: Data Satelit untuk Pembangunan
 ---
 
-# Data Satelit
+import DetailSection from '@site/src/components/DetailSection';
 
-Data satelit mendukung pertanian presisi...
+<DetailSection sectionId="data-satelit" />

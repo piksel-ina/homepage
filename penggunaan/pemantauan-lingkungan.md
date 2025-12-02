@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Pemantauan Lingkungan
 ---
 
-# Pemantauan Lingkungan
+import DetailSection from '@site/src/components/DetailSection';
 
-Monitoring kondisi ekosistem...
+<DetailSection sectionId="pemantauan-lingkungan" />
