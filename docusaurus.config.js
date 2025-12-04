@@ -1,5 +1,5 @@
 import { themes as prismThemes } from "prism-react-renderer";
-
+import { MapPin } from "lucide-react";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Piksel",
@@ -58,11 +58,30 @@ const config = {
     ],
   ],
 
+/* plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'penggunaan',                    // ← ID plugin
+        path: 'penggunaan',                  // ← Path ke folder penggunaan/
+        routeBasePath: 'penggunaan',         // ← URL base path
+        sidebarPath: require.resolve('./sidebars.js'),
+        // Optional: editUrl
+        // editUrl: 'https://github.com/your-org/piksel/tree/main/',
+      },
+    ],
+  ], */
+
   stylesheets: [
     {
       href: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap",
       type: "text/css",
     },
+  {
+    href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+    type: "text/css",
+  },
+
   ],
 
   headTags: [
@@ -87,6 +106,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "img/piksel-logo.svg",
+
+    // TAMBAHKAN KONFIGURASI COLOR MODE DI SINI
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+
       navbar: {
         title: "PIKSEL",
         logo: {
@@ -94,13 +121,109 @@ const config = {
           src: "img/piksel-logo.svg",
         },
         items: [
+           {
+          label: 'Penggunaan',
+          position: 'left',
+          to: '/penggunaan',  // ← Tambahkan ini!
+          items: [              // Array nested untuk dropdown
+            {
+              label: 'Ketahanan Pangan',
+              to: '/penggunaan/ketahanan-pangan',
+            },
+            {
+              label: 'Data Satelit untuk Pembangunan',
+              to: '/penggunaan/data-satelit',
+            },
+            
+            {
+              label: 'Kebencanaan',
+              to: '/penggunaan/kebencanaan',
+            },
+            {
+              label: 'Penggunaan Lahan',
+              to: '/penggunaan/penggunaan-lahan',
+            },
+            {
+              label: 'Pemantauan Lingkungan',
+              to: '/penggunaan/pemantauan-lingkungan',
+            },
+            {
+              label: 'Pengelolaan Pesisir',
+              to: '/penggunaan/pengelolaan-pesisir',
+            },
+          ],
+        },
+            /* // Menu PENGGUNAAN - BARU
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Dokumentasi",
-          },
-          { to: "/blog", label: "Artikel", position: "left" },
+            type: 'docSidebar',
+            sidebarId: 'penggunaanSidebar',
+            docsPluginId: 'penggunaan',  // ← Link ke plugin penggunaan
+            position: 'left',
+            label: 'Penggunaan',
+          }, */
+         {
+          label: 'Layanan',
+          position: 'left',
+          to: '/layanan',  // ← Tambahkan ini!
+          items: [              // Array nested untuk dropdown
+              {
+              label: 'Peta',
+              to: '/layanan/peta',
+            },
+            {
+              label: 'Analisis Spasial',
+              href: 'https://sandbox.staging.pik-sel.id/',
+            },
+          
+            {
+              label: 'Piksel Data API',
+              href: 'https://github.com/piksel-ina/homepage',
+            },
+            {
+              label: 'Katalog Produk',
+              href: 'https://explorer.staging.pik-sel.id/products',
+            },
+          ],
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Dokumentasi",
+        },
+        {
+          
+          label: 'Tentang',
+          position: 'left',
+          items: [              // Array nested untuk dropdown
+            {
+              label: 'Latar Belakang',
+              to: '/tentang/latar-belakang',
+            },
+            {
+              label: 'Tujuan',
+              to: '/tentang/tujuan',
+            },
+            {
+              label: 'Artikel',
+              to: '/blog',
+            },
+            {
+              label: 'Kolaborasi',
+              to: '/tentang/kolaborasi',
+            },
+             {
+              label: 'Kontributor',
+              to: '/tentang/kontributor',
+            },
+            {
+              label: 'Kontak Kami',
+              to: '/tentang/kontak',
+            },
+
+          ],
+        },
+  
           {
             type: "localeDropdown",
             position: "right",
@@ -111,48 +234,61 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Layanan",
+            title: "Penggunaan",
             items: [
               {
-                label: "Piksel Map",
-                to: "/map",
+              label: 'Ketahanan Pangan',
+              to: '/penggunaan/ketahanan-pangan',
+            },
+              {
+                label: "Data Satelit untuk Pembangunan",
+                to: "/penggunaan/data-satelit",
               },
               {
-                label: "Piksel Sandbox",
-                to: "/sandbox",
+                label: "Kebencanaan",
+                to: "/penggunaan/kebencanaan",
               },
               {
-                label: "Piksel Data API",
-                to: "/api",
+                label: "Penggunaan Lahan",
+                to: "/penggunaan/penggunaan-lahan",
               },
               {
-                label: "Piksel Workflows",
-                to: "/workflows",
+                label: "Pemantauan Lingkungan",
+                to: "/penggunaan/pemantauan-lingkungan",
+              },
+              {
+                label: "Pengelolaan Pesisir",
+                to: "/penggunaan/pengelolaan-pesisir",
               },
             ],
           },
           {
-            title: "Contoh Pemanfaatan",
-            items: [
+            title: "Layanan",
+            items: [              // Array nested untuk dropdown
               {
-                label: "Environment",
-                to: "/environment",
-              },
-              {
-                label: "Technology",
-                to: "/technology",
-              },
-              {
-                label: "Research",
-                to: "/research",
-              },
-            ],
+              label: 'Peta',
+              to: '/layanan/peta',
+            },
+            {
+              label: 'Analisis Spasial',
+              href: 'https://sandbox.staging.pik-sel.id/',
+            },
+          
+            {
+              label: 'Piksel Data API',
+              href: 'https://github.com/piksel-ina/homepage',
+            },
+            {
+              label: 'Katalog Produk',
+              href: 'https://explorer.staging.pik-sel.id/products',
+            },
+          ],
           },
           {
             title: "Referensi Lainnya",
             items: [
               {
-                label: "Documentation",
+                label: "Dokumentasi",
                 to: "/docs",
               },
               {
@@ -160,11 +296,11 @@ const config = {
                 to: "/docs/api",
               },
               {
-                label: "Tutorials",
+                label: "Tutorial",
                 to: "/docs/tutorials",
               },
               {
-                label: "Blog",
+                label: "Artikel",
                 to: "/blog",
               },
               {
@@ -175,19 +311,28 @@ const config = {
           },
           {
             title: "Kontak Kami",
-            items: [
-              {
-                label: "Email: piksel@big.go.id",
-                href: "mailto:piksel@big.go.id",
-              },
-              {
-                label: "Phone: 021-8752062",
-                href: "tel:+62218752062",
-              },
-              {
-                label: "BIG Indonesia",
-                href: "https://www.big.go.id",
-              },
+            items: [{
+      label: "piksel@big.go.id",
+      href: "mailto:piksel@big.go.id",
+      className: "footer-email", // Tambahkan class
+    },
+    {
+      label: "021-8752062",
+      href: "tel:+62218752062",
+      className: "footer-phone", // Tambahkan class
+    },
+    {
+      label: "Badan Informasi Geospasial",
+      href: "https://www.big.go.id",
+      className: "footer-website", // Tambahkan class
+    },
+{
+  label: "Jl. Raya Jakarta - Bogor KM. 46.\nCibinong 16911. Indonesia.",
+  href: "https://www.google.com/maps/place/-6.490857746585234,106.84939063522785",
+  className: "footer-location-wrapper", // Tambahkan class
+},
+
+
             ],
           },
         ],

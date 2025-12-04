@@ -1,0 +1,224 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.sectionCard {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sectionCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 175px;
+}
+
+.imageContainer {
+  flex: 0 0 235px;
+  width: 235px;
+  min-height: 175px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.sectionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.imageFallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.fallbackIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.fallbackTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.fallbackText {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+.textContent {
+  flex: 1;
+  min-width: 300px;
+  min-height: 175px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all var(--ifm-transition-fast);
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+.sectionDescription {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.sectionButton {
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  align-self: flex-start;
+}
+
+.sectionButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+  text-decoration: none;
+}
+
+/* Updated Scroll to Top Button - dengan SVG dan Teks */
+.scrollTopButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.scrollTopButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scrollTopButton svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 996px) {
+  .imageContainer {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .textContent {
+    min-width: 100%;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionCard {
+    margin-bottom: 1rem;
+  }
+
+  .textContent {
+    padding: 1rem 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sectionButton {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* Mobile: tampilkan hanya icon */
+  .scrollTopButton {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.625rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .scrollTopButton span {
+    display: none;
+  }
+}
