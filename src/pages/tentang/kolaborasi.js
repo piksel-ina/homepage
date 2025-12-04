@@ -23,7 +23,7 @@ export default function Kolaborasi() {
 
   return (
     <Layout
-      title="Kolaborasi PIKSEL"
+      title="Kolaborasi"
       description="Memahami bumi Indonesia melalui piksel"
       wrapperClassName="layout-wrapper">
       

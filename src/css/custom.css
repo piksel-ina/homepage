@@ -54,6 +54,10 @@
   --card-link-hover: #74c0fc;
 }
 
+:root {
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: #41a6f9;
@@ -769,7 +773,74 @@ li:has(.hidden-sidebar-item) {
   content: "🌐 ";
   margin-right: 8px;
   display: inline-block;
+    vertical-align: middle; /* ← TAMBAHKAN INI */
+
 }
 
+
+
+/* Wrapper class pada <a> */
+.footer-location-wrapper {
+  white-space: pre-line !important;
+  display: inline-block;
+  padding-left: 26px;
+  text-indent: -26px;
+  line-height: 1.4;
+}
+
+/* Icon pin merah */
+.footer-location-wrapper::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZjQzMzMzIiBzdHJva2U9IiNmNDMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMTBjMCA0Ljk5My01LjUzOSAxMC4xOTMtNy4zOTkgMTEuNzk5YTEgMSAwIDAgMS0xLjIwMiAwQzkuNTM5IDIwLjE5MyA0IDE0Ljk5MyA0IDEwYTggOCAwIDEgMSAxNiAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMCIgcj0iMyIgZmlsbD0id2hpdGUiLz48L3N2Zz4=);
+vertical-align: middle; /* ← TAMBAHKAN INI */
+}
+
+
+
+/* --- CARD KONTAK --- */
+.kontak-card {
+  background: var(--ifm-card-background-color);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kontak-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+}
+
+/* Item kontak */
+.kontak-list li {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.kontak-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Link */
+.kontak-list a {
+  color: var(--ifm-link-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.leaflet-container {
+  height: 350px;
+  width: 100%;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
 
 

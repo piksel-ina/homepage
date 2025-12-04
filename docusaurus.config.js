@@ -1,5 +1,5 @@
 import { themes as prismThemes } from "prism-react-renderer";
-
+import { MapPin } from "lucide-react";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Piksel",
@@ -77,6 +77,11 @@ const config = {
       href: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap",
       type: "text/css",
     },
+  {
+    href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+    type: "text/css",
+  },
+
   ],
 
   headTags: [
@@ -201,7 +206,7 @@ const config = {
             },
             {
               label: 'Artikel',
-              to: '/tentang/artikel',
+              to: '/blog',
             },
             {
               label: 'Kolaborasi',
@@ -283,7 +288,7 @@ const config = {
             title: "Referensi Lainnya",
             items: [
               {
-                label: "Documentation",
+                label: "Dokumentasi",
                 to: "/docs",
               },
               {
@@ -291,11 +296,11 @@ const config = {
                 to: "/docs/api",
               },
               {
-                label: "Tutorials",
+                label: "Tutorial",
                 to: "/docs/tutorials",
               },
               {
-                label: "Blog",
+                label: "Artikel",
                 to: "/blog",
               },
               {
@@ -317,10 +322,17 @@ const config = {
       className: "footer-phone", // Tambahkan class
     },
     {
-      label: "Badan Informasi Geospasial (BIG)",
+      label: "Badan Informasi Geospasial",
       href: "https://www.big.go.id",
       className: "footer-website", // Tambahkan class
     },
+{
+  label: "Jl. Raya Jakarta - Bogor KM. 46.\nCibinong 16911. Indonesia.",
+  href: "https://www.google.com/maps/place/-6.490857746585234,106.84939063522785",
+  className: "footer-location-wrapper", // Tambahkan class
+},
+
+
             ],
           },
         ],

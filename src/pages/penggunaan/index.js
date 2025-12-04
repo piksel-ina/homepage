@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
+import { Map } from "lucide-react";
 
 export default function MyReactPage() {
   const [imageErrors, setImageErrors] = React.useState({});
@@ -114,7 +115,11 @@ export default function MyReactPage() {
   };
 
   return (
-    <Layout>
+    <Layout
+     title="Penggunaan"
+      description="Memahami bumi Indonesia melalui piksel"
+      wrapperClassName="layout-wrapper">
+        
       {/* Container utama - gunakan CSS class */}
       <div className="sections-container">
         {sections.map((section, index) => (

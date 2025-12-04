@@ -21,405 +21,364 @@ export default function Kontributor() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // ✅ DATA KONTRIBUTOR - GANTI SESUAI KEBUTUHAN
+  const contributors = [
+    {
+      name: "Dr. Antonius Bambang Wijanarto",
+      position: "Deputi Bidang Infrastruktur Geospasial Tematik",
+      organization: "Badan Informasi Geospasial",
+      image: "/img/kontributor/anton.jpg"
+    },
+    {
+      name: "Dr. Gatot Haryo Pramono, B.Sc, M.App.Sc",
+      position: "Direktur Pemetaan Tematik",
+      organization: "Badan Informasi Geospasial",
+      image: "/img/kontributor/gatot.jpg"
+    },
+    {
+      name: "Muhammad Taufik",
+      position: "Surveyor Pemetaan Pertama",
+      organization: "Badan Informasi Geospasial",
+      image: "/img/kontributor/taufik.jpg"
+    },
+    {
+      name: "Ali Amarullah",
+      position: "Surveyor Pemetaan Pertama",
+      organization: "Badan Informasi Geospasial",
+      image: "/img/kontributor/ali.jpg"
+    },
+    {
+      name: "Nama Kontributor 5",
+      position: "Jabatan/Posisi",
+      organization: "Badan Informasi Geospasial",
+      image: "/img/kontributor/person5.jpg"
+    },
+    {
+      name: "Nama Kontributor 6",
+      position: "Jabatan/Posisi",
+      organization: "Badan Informasi Geospasial",
+      image: "/img/kontributor/person6.jpg"
+    },
+    {
+      name: "Nama Kontributor 7",
+      position: "Jabatan/Posisi",
+      organization: "Geoscience Australia",
+      image: "/img/kontributor/person7.jpg"
+    },
+    {
+      name: "Nama Kontributor 8",
+      position: "Jabatan/Posisi",
+      organization: "Geoscience Australia",
+      image: "/img/kontributor/person8.jpg"
+    },
+    {
+      name: "Nama Kontributor 9",
+      position: "Jabatan/Posisi",
+      organization: "Geoscience Australia",
+      image: "/img/kontributor/person9.jpg"
+    },
+    {
+      name: "Nama Kontributor 10",
+      position: "Jabatan/Posisi",
+      organization: "Geoscience Australia",
+      image: "/img/kontributor/person10.jpg"
+    }
+  ];
+
+  // ✅ COMPONENT CARD KONTRIBUTOR
+  const ContributorCard = ({ contributor }) => {
+    const [imageError, setImageError] = useState(false);
+
+    return (
+      <div 
+        style={{
+          backgroundColor: 'var(--ifm-color-emphasis-100)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+          cursor: 'pointer',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-8px)';
+          e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.15)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+      >
+        {/* Image Container - Fixed Aspect Ratio */}
+        <div style={{ 
+          position: 'relative',
+          width: '100%',
+          paddingTop: '100%', // 1:1 Aspect Ratio (Square)
+          backgroundColor: 'var(--ifm-color-emphasis-200)',
+          overflow: 'hidden'
+        }}>
+          {!imageError ? (
+            <img 
+              src={contributor.image}
+              alt={contributor.name}
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+              style={{ 
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                userSelect: 'none',
+                WebkitUserDrag: 'none'
+              }}
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div style={{ 
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'var(--ifm-color-emphasis-300)',
+              color: 'var(--ifm-color-emphasis-600)'
+            }}>
+              <svg 
+                width="64" 
+                height="64" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="1.5"
+                style={{ marginBottom: '0.5rem', opacity: 0.5 }}
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span style={{ fontSize: '0.875rem', opacity: 0.7 }}>Foto tidak tersedia</span>
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div style={{ 
+          padding: '1.5rem',
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <h3 style={{ 
+            fontSize: '1.125rem', 
+            fontWeight: '700',
+            marginBottom: '0.5rem',
+            color: 'var(--ifm-font-color-base)',
+            lineHeight: '1.3'
+          }}>
+            {contributor.name}
+          </h3>
+          <p style={{ 
+            fontSize: '0.9rem',
+            lineHeight: '1.5',
+            color: 'var(--ifm-color-emphasis-700)',
+            margin: 0,
+            marginTop: 'auto'
+          }}>
+            {contributor.position}<br/>
+            <span style={{ fontWeight: '500', color: 'var(--ifm-color-primary)' }}>
+              {contributor.organization}
+            </span>
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <Layout
-      title="Kontributor PIKSEL"
+      title="Kontributor"
       description="Memahami bumi Indonesia melalui piksel"
       wrapperClassName="layout-wrapper">
       
-      {/* HERO SECTION dengan Icon */}
       <main className="main-wrapper">
-      {/* MAIN CONTENT AREA - HTML Biasa */}
-      <div style={{ 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
-        padding: '2rem 1.5rem',
-        color: 'var(--ifm-font-color-base)'
-      }}>
-        
-        {/* Section 1: Kontributor PIKSEL */}
-        <section style={{ marginBottom: '3rem' }}>
-          <h2 style={{ 
-            fontSize: '2rem', 
-            fontWeight: '700', 
-            marginBottom: '1.5rem',
-            color: 'var(--ifm-color-primary)'
-          }}>
-            Kontributor PIKSEL
-          </h2>
-          
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            gap: '2rem',
-            marginBottom: '2rem'
-          }}>
-            <div>
-              <img 
-                src="/img/kontributor/anton.jpg" 
-                alt="Dr. Antonius Bambang Wijanarto"
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                style={{ 
-                  width: '100%', 
-                  height: '250px', 
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                  marginBottom: '1rem',
-                  userSelect: 'none',
-                  WebkitUserDrag: 'none'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <div style={{ 
-                display: 'none',
-                width: '100%', 
-                height: '250px', 
-                backgroundColor: '#f0f0f0',
-                borderRadius: '8px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1rem',
-                color: '#666'
-              }}>
-                <span>Gambar tidak tersedia</span>
-              </div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>
-                Dr. Antonius Bambang Wijanarto
-              </h3>
-              <p style={{ lineHeight: '1.6', textAlign: 'justify' }}>
-              Deputi Bidang Infrastruktur Geospasial Tematik<br/> Badan Informasi Geospasial
-              
-              </p>
-            </div>
-
-            <div>
-              <img 
-                src="/img/kontributor/gatot.jpg" 
-                alt="Dr. Gatot Haryo Pramono, B.Sc, M.App.Sc"
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                style={{ 
-                  width: '100%', 
-                  height: '250px', 
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                  marginBottom: '1rem',
-                  userSelect: 'none',
-                  WebkitUserDrag: 'none'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <div style={{ 
-                display: 'none',
-                width: '100%', 
-                height: '250px', 
-                backgroundColor: '#f0f0f0',
-                borderRadius: '8px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1rem',
-                color: '#666'
-              }}>
-                <span>Gambar tidak tersedia</span>
-              </div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>
-                Dr. Gatot Haryo Pramono, B.Sc, M.App.Sc
-              </h3>
-              <p style={{ lineHeight: '1.6', textAlign: 'justify' }}>
-                Direktur Pemetaan Tematik<br/> Badan Informasi Geospasial
-              </p>
-            </div>
-
-            <div>
-              <img 
-                src="/img/tentang/urban.jpg" 
-                alt="Kawasan Perkotaan"
-                style={{ 
-                  width: '100%', 
-                  height: '250px', 
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                  marginBottom: '1rem'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <div style={{ 
-                display: 'none',
-                width: '100%', 
-                height: '250px', 
-                backgroundColor: '#f0f0f0',
-                borderRadius: '8px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1rem',
-                color: '#666'
-              }}>
-                <span>Gambar tidak tersedia</span>
-              </div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>
-                Pertumbuhan Perkotaan
-              </h3>
-              <p style={{ lineHeight: '1.6', textAlign: 'justify' }}>
-                Ekspansi kawasan perkotaan yang pesat memerlukan perencanaan tata 
-                ruang yang cermat. Teknologi satelit memberikan data objektif untuk 
-                pembangunan kota yang berkelanjutan.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2: Solusi PIKSEL */}
-        <section style={{ marginBottom: '3rem' }}>
-          <h2 style={{ 
-            fontSize: '2rem', 
-            fontWeight: '700', 
-            marginBottom: '1.5rem',
-            color: 'var(--ifm-color-primary)'
-          }}>
-            Solusi PIKSEL
-          </h2>
-          
-          <div style={{ 
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            gap: '2rem',
-            alignItems: 'center',
-            marginBottom: '2rem'
-          }}>
-            <div style={{ flex: '1', minWidth: '300px' }}>
-              <p style={{ 
-                fontSize: '1.1rem', 
-                lineHeight: '1.8', 
-                textAlign: 'justify',
-                marginBottom: '1rem'
-              }}>
-                PIKSEL hadir untuk mendapatkan <strong>visibilitas yang tinggi</strong>: 
-                memahami pola, tren, dan risikonya. Dengan tagline{' '}
-                <em>"Memahami bumi Indonesia melalui piksel"</em>, kami berusaha 
-                menerjemahkan citra satelit menjadi wawasan yang dapat ditindaklanjuti.
-              </p>
-              
-              <p style={{ 
-                fontSize: '1.1rem', 
-                lineHeight: '1.8', 
-                textAlign: 'justify',
-                marginBottom: '1rem'
-              }}>
-                Platform ini dirancang agar pembangunan berdaya saing berjalan selaras 
-                dengan keberlanjutan lingkungan dan ketahanan masyarakat. PIKSEL adalah 
-                platform berbasis <strong>cloud</strong> yang memanfaatkan data pengamatan 
-                bumi untuk menjawab beragam tantangan di Indonesia.
-              </p>
-            </div>
-            
-            <div style={{ flex: '1', minWidth: '300px' }}>
-              <img 
-                src="/img/tentang/satelit.jpg" 
-                alt="Satelit"
-                style={{ 
-                  width: '100%', 
-                  height: 'auto',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <div style={{ 
-                display: 'none',
-                width: '100%', 
-                height: '300px', 
-                backgroundColor: '#f0f0f0',
-                borderRadius: '12px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#666'
-              }}>
-                <span>Gambar satelit tidak tersedia</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3: Keunggulan Platform */}
-        <section style={{ marginBottom: '3rem' }}>
-          <h2 style={{ 
-            fontSize: '2rem', 
-            fontWeight: '700', 
-            marginBottom: '1.5rem',
-            color: 'var(--ifm-color-primary)'
-          }}>
-            Keunggulan Platform
-          </h2>
-          
-          <div style={{ 
-            backgroundColor: 'var(--ifm-color-emphasis-100)',
-            padding: '2rem',
-            borderRadius: '12px',
-            marginBottom: '2rem'
-          }}>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0,
-              margin: 0
-            }}>
-              <li style={{ 
-                display: 'flex',
-                alignItems: 'flex-start',
-                marginBottom: '1.5rem',
-                fontSize: '1.05rem',
-                lineHeight: '1.6'
-              }}>
-                <span style={{ 
-                  marginRight: '1rem', 
-                  fontSize: '1.5rem',
-                  color: 'var(--ifm-color-primary)'
-                }}>✓</span>
-                <div>
-                  <strong>Terstandar:</strong> Protokol dan metodologi yang konsisten 
-                  memastikan kualitas dan komparabilitas data
-                </div>
-              </li>
-              
-              <li style={{ 
-                display: 'flex',
-                alignItems: 'flex-start',
-                marginBottom: '1.5rem',
-                fontSize: '1.05rem',
-                lineHeight: '1.6'
-              }}>
-                <span style={{ 
-                  marginRight: '1rem', 
-                  fontSize: '1.5rem',
-                  color: 'var(--ifm-color-primary)'
-                }}>✓</span>
-                <div>
-                  <strong>Mudah Diakses:</strong> Antarmuka intuitif dan dokumentasi 
-                  lengkap memudahkan pengguna dari berbagai latar belakang
-                </div>
-              </li>
-              
-              <li style={{ 
-                display: 'flex',
-                alignItems: 'flex-start',
-                marginBottom: '1.5rem',
-                fontSize: '1.05rem',
-                lineHeight: '1.6'
-              }}>
-                <span style={{ 
-                  marginRight: '1rem', 
-                  fontSize: '1.5rem',
-                  color: 'var(--ifm-color-primary)'
-                }}>✓</span>
-                <div>
-                  <strong>Skalabel:</strong> Infrastruktur cloud memungkinkan pemrosesan 
-                  data dalam skala besar dengan efisien
-                </div>
-              </li>
-              
-              <li style={{ 
-                display: 'flex',
-                alignItems: 'flex-start',
-                fontSize: '1.05rem',
-                lineHeight: '1.6'
-              }}>
-                <span style={{ 
-                  marginRight: '1rem', 
-                  fontSize: '1.5rem',
-                  color: 'var(--ifm-color-primary)'
-                }}>✓</span>
-                <div>
-                  <strong>Komprehensif:</strong> Menyediakan solusi end-to-end dari 
-                  pemrosesan, analisis, hingga visualisasi data satelit
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section style={{ 
-          textAlign: 'center',
-          padding: '3rem 2rem',
-          background: 'linear-gradient(135deg, var(--ifm-color-primary-light) 0%, var(--ifm-color-primary) 100%)',
-          borderRadius: '12px',
-          color: 'white'
+        {/* HERO TITLE */}
+        <div style={{
+          width: '100%',
+          backgroundColor: 'var(--ifm-background-color)',
+          borderBottom: '1px solid var(--ifm-color-emphasis-200)',
+          padding: '4rem 1.5rem 2rem'
         }}>
-          <h2 style={{ 
-            fontSize: '2rem', 
-            marginBottom: '1rem',
-            color: 'white'
+          <div style={{
+            maxWidth: '1200px',
+            margin: '0 auto'
           }}>
-            Siap Memanfaatkan Data Satelit?
-          </h2>
-          <p style={{ 
-            fontSize: '1.1rem', 
-            marginBottom: '2rem',
-            maxWidth: '700px',
-            margin: '0 auto 2rem'
-          }}>
-            Mulai eksplorasi data geospasial Indonesia dengan platform PIKSEL
-          </p>
-          <a 
-            href="/docs" 
-            className="button button--secondary button--lg"
-            style={{
-              backgroundColor: 'white',
-              color: 'var(--ifm-color-primary)',
-              marginRight: '1rem'
-            }}
-          >
-            Lihat Dokumentasi
-          </a>
-          <a 
-            href="/layanan" 
-            className="button button--outline button--lg"
-            style={{
-              borderColor: 'white',
-              color: 'white'
-            }}
-          >
-            Jelajahi Layanan
-          </a>
-        </section>
+            <h1 style={{
+              fontSize: 'clamp(3rem, 8vw, 6rem)',
+              fontWeight: '800',
+              lineHeight: '1.1',
+              margin: '0',
+              color: 'var(--ifm-font-color-base)',
+              fontFamily: 'var(--ifm-font-family-base)',
+              letterSpacing: '-0.02em'
+            }}>
+              <span style={{
+                color: 'var(--ifm-color-primary)',
+                marginRight: '0.2em'
+              }}>/</span>
+              Kontributor
+            </h1>
+            <p style={{
+              fontSize: '1.25rem',
+              color: 'var(--ifm-color-emphasis-700)',
+              marginTop: '1rem',
+              maxWidth: '600px'
+            }}>
+              Tim yang membangun dan mengembangkan platform Piksel.
+            </p>
+          </div>
+        </div>
 
-      </div>
+        {/* MAIN CONTENT AREA */}
+        <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
+          padding: '3rem 1.5rem',
+          color: 'var(--ifm-font-color-base)'
+        }}>
+          
+          {/* Section 1: Tim Inti */}
+          <section style={{ marginBottom: '4rem' }}>
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              fontWeight: '700', 
+              marginBottom: '2rem',
+              color: 'var(--ifm-font-color-base)',
+              letterSpacing: '-0.01em'
+            }}>
+              Badan Informasi Geospasial - Geoscience Australia
+            </h2>
+            
+            {/* ✅ GRID LAYOUT - 4 COLUMNS RESPONSIVE */}
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', 
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              {contributors.map((contributor, index) => (
+                <ContributorCard key={index} contributor={contributor} />
+              ))}
+            </div>
+          </section>
 
-      {/* TOMBOL SCROLL TO TOP */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="scroll-to-top-button"
-          aria-label="Kembali ke atas"
-        >
-          <svg 
-            width="20" 
-            height="20" 
-            viewBox="0 0 20 20" 
-            fill="currentColor"
+          {/* Section 2: Tentang Kontribusi */}
+          <section style={{ marginBottom: '4rem' }}>
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              fontWeight: '700', 
+              marginBottom: '2rem',
+              color: 'var(--ifm-font-color-base)',
+              letterSpacing: '-0.01em'
+            }}>
+              Tentang Kontribusi
+            </h2>
+            
+            <div style={{ 
+              display: 'flex',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              gap: '3rem',
+              alignItems: 'flex-start'
+            }}>
+              <div style={{ flex: '1', minWidth: '300px' }}>
+                <p style={{ 
+                  fontSize: '1.125rem', 
+                  lineHeight: '1.8', 
+                  color: 'var(--ifm-font-color-base)',
+                  marginBottom: '1.5rem',
+                  textAlign: 'justify'
+                }}>
+                  Platform PIKSEL dikembangkan oleh tim dari <strong>Badan Informasi Geospasial (BIG) </strong> 
+                  bekerjasama dengan <strong>Geoscience Australia (GA)</strong> serta dukungan dari berbagai institusi dan kontributor yang berdedikasi untuk 
+                  meningkatkan aksesibilitas data geospasial di Indonesia.
+                </p>
+                
+                <p style={{ 
+                  fontSize: '1.125rem', 
+                  lineHeight: '1.8', 
+                  color: 'var(--ifm-font-color-base)',
+                  textAlign: 'justify'
+                }}>
+                  Kami terus bekerja untuk menghadirkan solusi inovatif dalam pemrosesan, 
+                  analisis, dan visualisasi data satelit yang mendukung pembangunan berkelanjutan.
+                </p>
+              </div>
+              
+              <div className="section-card" style={{ 
+                flex: '1', 
+                minWidth: '300px',
+                backgroundColor: 'var(--card-bg-primary)',
+                padding: '2rem',
+                borderRadius: '12px'
+              }}>
+                <h3 style={{ 
+                  fontSize: '2.5rem',
+                  fontWeight: '700', 
+                  marginBottom: '1rem',
+                  color: 'white',
+                  letterSpacing: '-0.01em'
+                }}>
+                  Ingin Berkontribusi?
+                </h3>
+                <p style={{ 
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '1.5rem',
+                  color: 'white',
+                  textAlign: 'justify'
+                }}>
+                  Kami selalu terbuka untuk berkolaborasi dan menerima kontribusi baik dari komunitas maupun institusi. 
+                  Hubungi kami untuk informasi lebih lanjut.
+                </p>
+                <a 
+                  href="mailto:piksel@big.go.id" 
+                  className="section-button"
+                >
+                  Hubungi Kami
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* TOMBOL SCROLL TO TOP */}
+        {showScrollTop && (
+          <button
+            onClick={scrollToTop}
+            className="scroll-to-top-button"
+            aria-label="Kembali ke atas"
           >
-            <path 
-              fillRule="evenodd" 
-              d="M10 18a1 1 0 01-1-1V5.414L5.707 8.707a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 01-1 1z" 
-              clipRule="evenodd" 
-            />
-          </svg>
-          <span style={{ marginLeft: '0.5rem' }}>Kembali ke Atas</span>
-        </button>
-      )}
+            <svg 
+              width="20" 
+              height="20" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M10 18a1 1 0 01-1-1V5.414L5.707 8.707a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 01-1 1z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+            <span style={{ marginLeft: '0.5rem' }}>Kembali ke Atas</span>
+          </button>
+        )}
       </main>
     </Layout>
   );

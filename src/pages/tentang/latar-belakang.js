@@ -23,7 +23,7 @@ export default function LatarBelakang() {
 
   return (
     <Layout
-      title="Latar Belakang PIKSEL"
+      title="Latar Belakang"
       description="Memahami bumi Indonesia melalui piksel"
       wrapperClassName="layout-wrapper">
       

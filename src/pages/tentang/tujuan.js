@@ -23,7 +23,7 @@ export default function Tujuan() {
 
   return (
     <Layout
-      title="Tujuan PIKSEL"
+      title="Tujuan"
       description="Memahami bumi Indonesia melalui piksel"
       wrapperClassName="layout-wrapper">
       
