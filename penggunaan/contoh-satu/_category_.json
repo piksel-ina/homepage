@@ -1,9 +1,0 @@
-{
-  "label": "Satu Dua",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "title": "Contoh Nested Satu Dua",
-    "description": "Sistem parent child."
-  }
-}

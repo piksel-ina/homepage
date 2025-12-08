@@ -243,12 +243,14 @@ export default function Kontributor() {
             </p>
           </div>
         </div>
-
+<p></p>
         {/* MAIN CONTENT AREA */}
         <div style={{ 
           maxWidth: '1200px', 
           margin: '0 auto', 
           padding: '3rem 1.5rem',
+                                            backgroundColor: 'var(--ifm-color-emphasis-100)',
+
           color: 'var(--ifm-font-color-base)'
         }}>
           
@@ -259,6 +261,7 @@ export default function Kontributor() {
               fontWeight: '700', 
               marginBottom: '2rem',
               color: 'var(--ifm-font-color-base)',
+              
               letterSpacing: '-0.01em'
             }}>
               Badan Informasi Geospasial - Geoscience Australia
@@ -267,7 +270,9 @@ export default function Kontributor() {
             {/* ✅ GRID LAYOUT - 4 COLUMNS RESPONSIVE */}
             <div style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', 
+              gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',  
+                                     backgroundColor: 'var(--ifm-color-emphasis-100)',
+
               gap: '1.5rem',
               marginBottom: '2rem'
             }}>
@@ -277,86 +282,9 @@ export default function Kontributor() {
             </div>
           </section>
 
-          {/* Section 2: Tentang Kontribusi */}
-          <section style={{ marginBottom: '4rem' }}>
-            <h2 style={{ 
-              fontSize: '2.5rem', 
-              fontWeight: '700', 
-              marginBottom: '2rem',
-              color: 'var(--ifm-font-color-base)',
-              letterSpacing: '-0.01em'
-            }}>
-              Tentang Kontribusi
-            </h2>
-            
-            <div style={{ 
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              gap: '3rem',
-              alignItems: 'flex-start'
-            }}>
-              <div style={{ flex: '1', minWidth: '300px' }}>
-                <p style={{ 
-                  fontSize: '1.125rem', 
-                  lineHeight: '1.8', 
-                  color: 'var(--ifm-font-color-base)',
-                  marginBottom: '1.5rem',
-                  textAlign: 'justify'
-                }}>
-                  Platform PIKSEL dikembangkan oleh tim dari <strong>Badan Informasi Geospasial (BIG) </strong> 
-                  bekerjasama dengan <strong>Geoscience Australia (GA)</strong> serta dukungan dari berbagai institusi dan kontributor yang berdedikasi untuk 
-                  meningkatkan aksesibilitas data geospasial di Indonesia.
-                </p>
-                
-                <p style={{ 
-                  fontSize: '1.125rem', 
-                  lineHeight: '1.8', 
-                  color: 'var(--ifm-font-color-base)',
-                  textAlign: 'justify'
-                }}>
-                  Kami terus bekerja untuk menghadirkan solusi inovatif dalam pemrosesan, 
-                  analisis, dan visualisasi data satelit yang mendukung pembangunan berkelanjutan.
-                </p>
-              </div>
-              
-              <div className="section-card" style={{ 
-                flex: '1', 
-                minWidth: '300px',
-                backgroundColor: 'var(--card-bg-primary)',
-                padding: '2rem',
-                borderRadius: '12px'
-              }}>
-                <h3 style={{ 
-                  fontSize: '2.5rem',
-                  fontWeight: '700', 
-                  marginBottom: '1rem',
-                  color: 'white',
-                  letterSpacing: '-0.01em'
-                }}>
-                  Ingin Berkontribusi?
-                </h3>
-                <p style={{ 
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  marginBottom: '1.5rem',
-                  color: 'white',
-                  textAlign: 'justify'
-                }}>
-                  Kami selalu terbuka untuk berkolaborasi dan menerima kontribusi baik dari komunitas maupun institusi. 
-                  Hubungi kami untuk informasi lebih lanjut.
-                </p>
-                <a 
-                  href="mailto:piksel@big.go.id" 
-                  className="section-button"
-                >
-                  Hubungi Kami
-                </a>
-              </div>
-            </div>
-          </section>
+          
         </div>
-
+<p></p>
         {/* TOMBOL SCROLL TO TOP */}
         {showScrollTop && (
           <button

@@ -267,6 +267,7 @@ map.addControl(new ZoomToExtentControl());
           </div>
         </div>
 
+
         {/* INFORMASI KONTAK */}
         <section style={{ maxWidth: '1200px', margin: '2rem auto', padding: '0 1.5rem' }}>
           <div className="kontak-card">
@@ -353,7 +354,7 @@ map.addControl(new ZoomToExtentControl());
             </div>
           </div>
         </section>
-
+<p></p>
         {/* TOMBOL SCROLL TO TOP */}
         {showScrollTop && (
           <button
