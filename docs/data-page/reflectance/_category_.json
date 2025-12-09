@@ -1,0 +1,8 @@
+{
+  "label": "Surface Reflectance",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Data reflectance permukaan bumi yang tersedia di dalam Piksel."
+  }
+}

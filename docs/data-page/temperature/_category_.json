@@ -1,0 +1,8 @@
+{
+  "label": "Surface temperature",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Data temperatur permukaan bumi yang tersedia di dalam Piksel."
+  }
+}

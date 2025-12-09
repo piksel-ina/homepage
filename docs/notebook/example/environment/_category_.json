@@ -1,0 +1,8 @@
+{
+  "label": "Pemantauan Lingkungan",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Data satelit memungkinkan pemantauan lingkungan secara menyeluruh dengan mendeteksi perubahan tutupan lahan, kualitas udara, dan kondisi perairan. Informasi ini mendukung pengambilan keputusan berbasis bukti untuk menjaga keberlanjutan ekosistem serta mengurangi dampak perubahan iklim."
+  }
+}
